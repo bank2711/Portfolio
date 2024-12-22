@@ -295,15 +295,7 @@ body.light .btn-cta:focus {
   box-shadow: #07070733 0 0 0 var(--gutter-nano);
 }
 
-.btn-secondary {
-  border: 1px solid var(--border-dark);
-  color: var(--important);
-}
 
-.btn-secondary:hover,
-.btn-secondary:focus {
-  border-color: var(--important);
-}
 
 .link {
   display: inline-block;
