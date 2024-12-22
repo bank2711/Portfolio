@@ -930,26 +930,101 @@ body.dark .work-links img {
 /* --------------------------------- */
 /* ----- Contact -----*/
 /* --------------------------------- */
+.facebook-link {
+  color: gray; /* สีเทาเมื่อไม่ได้วางเมาส์ */
+  text-decoration: none; /* เอาเส้นขีดใต้ลิงก์ออก */
+  transition: color 0.3s ease; /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
+}
+
+/* เมื่อวางเมาส์ (hover) เปลี่ยนเป็นสีขาว */
+.facebook-link:hover {
+  color: white; /* เปลี่ยนเป็นสีขาวเมื่อวางเมาส์ */
+}
+
+.contact {
+  padding: 50px 20px;
+}
 
 .contact-content {
   display: grid;
-  grid-template-columns: minmax(245px, 35%) 1fr;
-  margin-block: var(--gutter-x-large);
-  border: 1px solid var(--border);
-  border-radius: var(--gutter-nano);
+  grid-template-columns: 1fr 1fr 1fr; /* 3 คอลัมน์ที่ขนาดเท่ากัน */
+  gap: 30px; /* ระยะห่างระหว่างคอลัมน์ */
+  text-align: center;
 }
 
-@media (max-width: 1032px) {
+.contact-item {
+  margin-top: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.contact-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
   .contact-content {
-    display: flex;
-    flex-direction: column-reverse;
-    max-inline-size: 845px;
-    margin-inline: auto;
+    grid-template-columns: 1fr; /* ในหน้าจอเล็ก จะให้คอลัมน์เรียงในแนวตั้ง */
+  }
+
+  .contact-item {
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างคอลัมน์ */
   }
 }
 
-.contact-textbox,
-.contact-form {
+
+/* --------------------------------- */
+/* ----- About -----*/
+/* --------------------------------- */
+
+.about-content {
+  display: flex;  /* ใช้ flexbox เพื่อให้เนื้อหาอยู่ในแนวตั้ง */
+  flex-direction: column;  /* ให้เนื้อหาทั้งหมดเรียงจากบนลงล่าง */
+  justify-content: flex-end;  /* จัดให้คอนเทนต์ทั้งหมดอยู่ด้านล่าง */
+  align-items: center;  /* จัดให้เนื้อหากลางแนวนอน */
+  margin-block: var(--gutter-x-large);
+  border: 1px solid var(--border);
+  border-radius: var(--gutter-nano);
+  height: 100%;  /* ใช้ความสูงเต็มเพื่อให้ flexbox จัดตำแหน่งได้ */
+}
+
+.signatures {
+  max-width: 200px;  /* กำหนดขนาดสูงสุดของรูปภาพ */
+  width: 100%;  /* ให้รูปภาพยืดตามกรอบ */
+  height: auto;
+  margin-top: 20px;  /* เพิ่มระยะห่างจากข้อความ */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;  /* ทำให้รูปแสดงเป็นบล็อกและสามารถจัดกึ่งกลางได้ */
+}
+
+@media (max-width: 1032px) {
+  .about-content {
+    display: flex;
+    flex-direction: column; /* ให้คอลัมน์เรียงตามแนวตั้ง */
+    justify-content: flex-end; /* จัดตำแหน่งให้เนื้อหาทั้งหมดอยู่ด้านล่าง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวนอน */
+    max-inline-size: 845px;
+    margin-inline: auto;
+  }
+
+  .signatures {
+    margin-top: 20px; /* เพิ่มระยะห่างจากข้อความ */
+    max-width: 200px; /* จำกัดขนาดของรูปภาพในหน้าจอเล็ก */
+    width: 100%; /* ให้รูปภาพยืดตามขนาดกรอบ */
+    height: auto;
+  }
+}
+
+.about-textbox {
   padding: var(--gutter-large) var(--gutter-small);
 }
 
@@ -985,38 +1060,18 @@ body.dark .work-links img {
   z-index: -1;
 }
 
-.indicator {
-  display: inline-block;
-  block-size: var(--gutter-nano);
-  inline-size: var(--gutter-nano);
-  border-radius: 50%;
-  background-color: red;
-  animation: blink 550ms alternate infinite var(--easing);
-}
-
-@keyframes blink {
-  100% {
-    opacity: 0;
-  }
-}
-
-.contact-text {
+.about-text {
   margin-block-end: var(--gutter-small);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.signatures {
-  inline-size: 150px;
-}
 
 body.light .signatures {
   filter: invert(1);
 }
 
-.contact-form {
-  background-color: var(--bg-color-secondary);
-  border-top-right-radius: var(--gutter-nano);
-  border-bottom-right-radius: var(--gutter-nano);
-}
+
 
 .form-field label,
 .form-field input,
@@ -1057,9 +1112,7 @@ body.light .signatures {
   margin-inline-start: var(--gutter-nano);
 }
 
-.contact-form button[type="submit"] {
-  border: none;
-}
+
 
 /* --------------------------------- */
 /* ----- Footer -----*/
