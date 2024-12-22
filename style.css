@@ -607,6 +607,7 @@ body.light .logo {
 
 .work-boxes {
   padding-block-start: var(--gutter-x-large);
+  max-width: 50%;
 }
 
 .work-box {
