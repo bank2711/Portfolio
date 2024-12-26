@@ -383,6 +383,7 @@ main {
 /* ----- Menu Button -----*/
 /* --------------------------------- */
 
+
 .menu-btn-container {
   position: fixed;
   width: 100%;
@@ -456,12 +457,13 @@ main {
 
 .nav-item a:hover::after,
 .nav-item a:focus::after {
-  transform: scale(1);
+  transform: scale(0.5);
 }
 
 /* --------------------------------- */
 /* ----- Header -----*/
 /* --------------------------------- */
+
 
 .header {
   min-block-size: calc(100vh + var(--radius));
@@ -485,8 +487,8 @@ body.light .header {
 
 .header-textbox {
   position: absolute;
-  top: 50%;
-  left: 2.5%;
+  
+  top: 70%;
   transform: translateY(-50%);
 }
 
@@ -503,21 +505,39 @@ body.light .header {
 }
 
 @media (max-width: 1200px) {
+  .header-textbox {
+  
+    top: 50%;
+  }
   .header-text {
     max-inline-size: 685px;
   }
 }
 
 @media (max-width: 845px) {
-  .header-text {
-    max-inline-size: 585px;
+
+  .header-textbox {
+    top: 50%;
+    text-align: center;
   }
+  .header-text {
+    max-inline-size: 300;
+    
+    
+  }
+  .header-btns {
+    display: inline-flex;
+    gap: var(--gutter-x-small);
+    flex-direction: column ;
+    
+  }
+  
 }
 
 .header-btns {
   display: inline-flex;
   gap: var(--gutter-x-small);
-}
+}  
 
 @media (max-width: 400px) {
   .header-textbox {
@@ -526,6 +546,7 @@ body.light .header {
     padding-inline: 0.6rem;
   }
   .header-btns {
+    
     flex-direction: column;
     width: 80%;
   }
@@ -924,14 +945,14 @@ body.dark .work-links img {
 /* ----- Contact -----*/
 /* --------------------------------- */
 .facebook-link {
-  color: gray; /* สีเทาเมื่อไม่ได้วางเมาส์ */
-  text-decoration: none; /* เอาเส้นขีดใต้ลิงก์ออก */
-  transition: color 0.3s ease; /* เพิ่ม transition เพื่อให้การเปลี่ยนสีดูนุ่มนวล */
+  color: gray; 
+  text-decoration: none; 
+  transition: color 0.7s ease; 
 }
 
-/* เมื่อวางเมาส์ (hover) เปลี่ยนเป็นสีขาว */
+
 .facebook-link:hover {
-  color: white; /* เปลี่ยนเป็นสีขาวเมื่อวางเมาส์ */
+  color: rgb(79, 72, 172);
 }
 
 .contact {
