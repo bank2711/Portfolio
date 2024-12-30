@@ -488,7 +488,6 @@ body.light {
 }
 
 .header-textbox {
- 
   position: absolute;
   left: 5%;
   top: 50%;
@@ -501,15 +500,20 @@ body.light {
 .header-text {
   font-size: var(--text-large);
   font-weight: 400;
-  max-inline-size: 745px;
+  max-inline-size: 550px;
   margin-block-start: var(--gutter-micro);
   margin-block-end: var(--gutter-medium);
 }
-
-
 .header-btns {
   display: flex;
   column-gap: 20px;
+}
+
+@media (max-width:775px) {
+  .header-text {
+    max-inline-size: 450px;
+    
+  }
 }
 
 
@@ -866,16 +870,17 @@ body.dark .work-links img {
 /* --------------------------------- */
 
 .skills-imgs {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: var(--gutter-x-large);
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 5rem;
   padding-block-start: var(--gutter-x-large);
 }
 
 .skills-img {
-  block-size: 135px;
-  inline-size: 135px;
+  justify-self: center;
+  align-self: start;
+  block-size: 160px;
+  inline-size: 160px;
 }
 
 @media (max-width: 1100px) {
