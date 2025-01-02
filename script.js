@@ -52,7 +52,7 @@ let observer = new IntersectionObserver(
       );
     }
   },
-  { threshold: 0.3 }
+  { threshold: 0.6 }
 );
 
 workEls.forEach((workEl) => {

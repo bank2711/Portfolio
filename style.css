@@ -110,8 +110,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Improve media defaults */
-
 picture,
 svg,
 img {
@@ -202,7 +200,7 @@ h3,
 /* ----- Utilities -----*/
 /* --------------------------------- */
 
-/* Center and constrain the width of page sections */
+
 
 .container {
   max-inline-size: var(--site-max-width);
@@ -234,13 +232,12 @@ h3,
   }
 }
 
-/* disable scroll when menu is opened */
+
 
 .lock-screen {
   overflow-y: hidden;
 }
 
-/* hides visually and removes from accessibility tree  */
 
 .hidden {
   visibility: hidden;
@@ -690,8 +687,6 @@ body.dark .work-links img {
   filter: invert(1);
 }
 
-/* Github icon */
-
 .work-links > a:last-child {
   transition: 0.3s transform ease-in;
 }
@@ -740,130 +735,6 @@ body.dark .work-links img {
   }
 }
 
-/* --------------------------------- */
-/* ----- Articles -----*/
-/* --------------------------------- */
-
-.article-boxes {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 3.5%;
-  margin-block-start: var(--gutter-x-large);
-}
-
-.article-box {
-  flex-basis: 31%;
-  border: 1px solid var(--border);
-  padding: var(--gutter-medium) var(--gutter-small);
-  border-radius: var(--gutter-nano);
-  background-color: var(--bg-color-secondary);
-}
-
-.article-textbox {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.article-text {
-  font-size: var(--text-small);
-  margin-block: var(--gutter-x-small);
-}
-
-.article-info {
-  display: flex;
-  justify-content: space-between;
-  margin-block-start: auto;
-}
-
-.reaction-count {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--gutter-nano);
-  font-size: initial;
-}
-
-@media (max-width: 985px) {
-  .article-boxes {
-    max-inline-size: 685px;
-    margin-inline: auto;
-    justify-content: center;
-    gap: 4%;
-  }
-
-  .article-box:nth-of-type(2),
-  .article-box:nth-of-type(3) {
-    flex-basis: 48%;
-  }
-
-  .article-box:last-child {
-    display: none;
-  }
-}
-
-@media (max-width: 650px) {
-  .article-box:nth-child(2),
-  .article-box:nth-child(3),
-  .article-box:last-child {
-    flex-basis: 100%;
-  }
-
-  .featured-article {
-    margin-block-end: 0;
-  }
-
-  .article-box:not(:last-child) {
-    margin-block-end: var(--gutter-x-small);
-  }
-
-  .article-box:last-child {
-    display: block;
-  }
-}
-
-/* --------------------------------- */
-/* ----- Featured article -----*/
-/* --------------------------------- */
-
-.featured-article {
-  flex-basis: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-block-end: 44.8px;
-}
-
-@media (max-width: 985px) {
-  .featured-article {
-    margin-block-end: 24.4px;
-    flex-direction: column-reverse;
-  }
-}
-
-.featured-article .article-textbox {
-  flex-basis: 44%;
-}
-
-.featured-article h3 {
-  margin-block-start: var(--gutter-x-small);
-}
-
-.featured-article .article-illustration {
-  flex-basis: 50%;
-}
-
-.article-illustration img {
-  border-radius: var(--gutter-nano);
-}
-
-.featured-article .article-text {
-  font-size: var(--text-medium);
-}
-
-.featured-article .article-info {
-  justify-content: flex-start;
-  gap: var(--gutter-medium);
-}
 
 /* --------------------------------- */
 /* ----- Skills -----*/
@@ -934,8 +805,8 @@ body.dark .work-links img {
 
 .contact-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 คอลัมน์ที่ขนาดเท่ากัน */
-  gap: 30px; /* ระยะห่างระหว่างคอลัมน์ */
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 30px; 
   text-align: center;
 }
 
@@ -962,11 +833,11 @@ body.light .contact-item h3 {
 
 @media (max-width: 768px) {
   .contact-content {
-    grid-template-columns: 1fr; /* ในหน้าจอเล็ก จะให้คอลัมน์เรียงในแนวตั้ง */
+    grid-template-columns: 1fr; 
   }
 
   .contact-item {
-    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างคอลัมน์ */
+    margin-bottom: 20px; 
   }
 }
 
@@ -976,40 +847,40 @@ body.light .contact-item h3 {
 /* --------------------------------- */
 
 .about-content {
-  display: flex;  /* ใช้ flexbox เพื่อให้เนื้อหาอยู่ในแนวตั้ง */
-  flex-direction: column;  /* ให้เนื้อหาทั้งหมดเรียงจากบนลงล่าง */
-  justify-content: flex-end;  /* จัดให้คอนเทนต์ทั้งหมดอยู่ด้านล่าง */
-  align-items: center;  /* จัดให้เนื้อหากลางแนวนอน */
+  display: flex;  
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center;  
   margin-block: var(--gutter-x-large);
   border: 1px solid var(--border);
   border-radius: var(--gutter-nano);
-  height: 100%;  /* ใช้ความสูงเต็มเพื่อให้ flexbox จัดตำแหน่งได้ */
+  height: 100%;  
 }
 
 .signatures {
-  max-width: 200px;  /* กำหนดขนาดสูงสุดของรูปภาพ */
-  width: 100%;  /* ให้รูปภาพยืดตามกรอบ */
+  max-width: 200px; 
+  width: 100%;  
   height: auto;
-  margin-top: 20px;  /* เพิ่มระยะห่างจากข้อความ */
+  margin-top: 20px;  
   margin-left: auto;
   margin-right: auto;
-  display: block;  /* ทำให้รูปแสดงเป็นบล็อกและสามารถจัดกึ่งกลางได้ */
+  display: block;  
 }
 
 @media (max-width: 1032px) {
   .about-content {
     display: flex;
-    flex-direction: column; /* ให้คอลัมน์เรียงตามแนวตั้ง */
-    justify-content: flex-end; /* จัดตำแหน่งให้เนื้อหาทั้งหมดอยู่ด้านล่าง */
-    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวนอน */
+    flex-direction: column; 
+    justify-content: flex-end; 
+    align-items: center; 
     max-inline-size: 845px;
     margin-inline: auto;
   }
 
   .signatures {
-    margin-top: 20px; /* เพิ่มระยะห่างจากข้อความ */
-    max-width: 200px; /* จำกัดขนาดของรูปภาพในหน้าจอเล็ก */
-    width: 100%; /* ให้รูปภาพยืดตามขนาดกรอบ */
+    margin-top: 20px; 
+    max-width: 200px; 
+    width: 100%; 
     height: auto;
   }
 }
@@ -1060,8 +931,6 @@ body.light .contact-item h3 {
 body.light .signatures {
   filter: invert(1);
 }
-
-
 
 .form-field label,
 .form-field input,
@@ -1174,7 +1043,6 @@ body.dark .footer-link img {
 }
 
 .theme-switch {
-  /* Track */
 
   --track-size: calc(var(--thumb-size) * 2);
   --track-padding: 0.225rem;
@@ -1183,8 +1051,6 @@ body.dark .footer-link img {
 
   --track-color-inactive: var(--track-inactive);
   --track-color-active: var(--track-active);
-
-  /* Thumb */
 
   --thumb-position: 0%;
   --thumb-size: 1.2rem;
